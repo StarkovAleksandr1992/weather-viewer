@@ -1,0 +1,200 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Равномерное распределение пространства между элементами */
+    align-items: center;
+    background: linear-gradient(97deg, rgba(104, 107, 152, 0.75) 0%, rgba(158, 131, 164, 0.75) 50%, rgba(89, 83, 127, 0.75) 100%);
+    margin-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: static;
+}
+
+.application-name {
+    text-align: left;
+    font-size: 25px;
+    font-weight: 550;
+    flex-grow: 1; /* Растягиваем элемент на всю доступную ширину */
+}
+
+.login-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.weather-popup {
+    display: flex;
+    position: fixed;
+    z-index: 2;
+    align-self: center;
+    top: 250px;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 450px;
+    padding: 30px;
+    border-radius: 6px;
+    flex-grow: 1;
+    background: #8aefdb;
+}
+
+#found-weather-card {
+    border: #d7f7f3;
+    background: #bef5ec;
+}
+
+.card-location {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 33px;
+}
+
+.card-location span {
+    vertical-align: text-top;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 100%;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 3px 5px;
+    background: #31d2f2;
+    border-radius: 6px;
+    color: white;
+}
+
+.card-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-current-temperature-value {
+    font-weight: normal;
+    font-size: 55px;
+}
+
+.card-current-temperature-value span {
+    font-size: 40px;
+}
+
+.card-day-max-temperature-value,
+.card-day-min-temperature-value {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.card-day-max-temperature-value span,
+.card-day-min-temperature-value span {
+    font-size: 12px;
+}
+
+.description-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-weather-description {
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.description-container button {
+    background-color: #31d2f2;
+    border: 0 solid #e2e8f0;
+    border-radius: 1.5rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.description-container button:hover {
+    background-color: #1e293b;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .description-container button {
+        font-size: 1.125rem;
+        padding: 1rem 2rem;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1; /* добавляем z-index, чтобы кнопка была поверх остального контента */
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
+
+.weather-data-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    height: auto;
+
+}
+
+.weather-card {
+    position: relative;
+    width: 350px;
+    height: 200px;
+    padding: 25px;
+    margin-outside: 10px;
+    border-radius: 10px;
+    background: white;
+}
+
+#search-results {
+    z-index: 1;
+}
+
+
+
+
+

@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  weather-viewer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgresql-db
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+
+  postgresql-db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: weather
+      POSTGRES_PASSWORD: weather
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"

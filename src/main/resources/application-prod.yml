@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgresql-db:5432/weather_viewer
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: weather_viewer
+
+security:
+  password:
+    min_length: 8
+    max_length: 20
+    num_eng_lower_case_chars: 1
+    num_eng_upper_case_chars: 1
+    num_spec_chars: 1
+  bcrypt:
+    cost_factor: 12
+
+caching:
+  locations_list_ttl_minutes: 1140
+  weather_data_ttl_minutes: 60
+  customers_ttl_minutes: 60
+
+session:
+  duration_of_hours: 24
+open_weather_map:
+  api_key: ${OPEN_WEATHER_API_KEY}
+  current_weather_url: https://api.openweathermap.org/data/2.5/weather
+  geocoder_url: http://api.openweathermap.org/geo/1.0/direct
+

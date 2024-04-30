@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Weather Viewer</title>
+    <link data-th-href="@{/css/style.css}" rel="stylesheet"/>
+    <link data-th-href="@{/bootstrap/css/bootstrap.css}" rel="stylesheet">
+    <script data-th-src="@{/bootstrap/js/bootstrap.js}" type="text/javascript"></script>
+    <script data-th-src="@{/js/Main.js}" type="module"></script>
+</head>
+<body data-th-style="'background-image: url(' + @{/img/background.jpg} + '); height: 100vh'">
+<div data-th-replace="~{components/header}"></div>
+<div data-th-replace="~{components/login-popup}"></div>
+<div data-th-value="${exception_message}"></div>
+<div class="weather-data-container flex-column" id="weather-data-container"></div>
+</body>
+</html>

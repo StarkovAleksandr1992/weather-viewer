@@ -1,0 +1,25 @@
+<div class="login-popup" id="login-popup" style="display: none">
+    <button class="close-btn" onclick="document.getElementById('login-popup').style.display = 'none'" type="button">×
+    </button>
+    <form action="/auth/login" autocomplete="on" id="login-form" method="post">
+        <div class="mb-3">
+            <label class="form-label" for="input-email">Email address</label>
+            <input aria-describedby="emailHelp" class="form-control" data-th-value="${login}" id="input-email"
+                   name="login" placeholder="login@example.com"
+                   type="email">
+            <div class="form-text" id="emailHelp">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="input-password">Password</label>
+            <input class="form-control" id="input-password" name="password" type="password">
+        </div>
+        <div class="mb-3" id="error-message" style="display: none; color: red"></div>
+        <div class="mb-3">
+            <button class="btn btn-primary w-100" id="sign-in-button" type="button">sign in</button>
+        </div>
+        <div class="mb-3">
+            <div class="form-text">Don't have account yet?</div>
+            <button class="btn btn-secondary w-100" id="sign-up-button" type="button">sign up</button>
+        </div>
+    </form>
+</div>

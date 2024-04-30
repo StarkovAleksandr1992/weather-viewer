@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <form class="d-flex" data-th-action="@{/search}" method="post">
+            <input class="form-control me-2" name="locationName" type="search" placeholder="Search location"
+                   aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <div class="navbar-text me-2" id="user-login"></div>
+        <button class="btn btn-danger" id="logout-button" type="button" onclick="">Logout</button>
+    </div>
+</nav>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var button = document.getElementById('logout-button');
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            fetch('/auth/logout', {
+                method: 'GET',
+                credentials: 'same-origin'
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                        window.location.href = '/';
+                    } else {
+                        console.error('Ошибка при выходе');
+                    }
+                })
+                .catch(function (error) {
+                    console.error('Ошибка:', error);
+                });
+        });
+    });
+</script>
